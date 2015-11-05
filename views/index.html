@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>My First Express App</title>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <style>
+      .welcome {
+        color: #f00;
+      }
+      p {
+        color: #000;
+      }
+      .menu {
+        text-align: center;
+      }
+      .menu button {
+        cursor: pointer;
+        height: 40px;
+        width: 140px;
+       }
+    </style>
+
+    <div class="container">
+      <h1 class="welcome">Welcome to the first app of the EXPRESS!</h1>
+      <h4>You can add users, list them and can delete them in this application</h4>
+
+      <h3 class="text-center">What action would you like to perform: </h3>
+      <div class='menu'>
+        <button onclick="window.location='/'" class="btn btn-primary">HOME</button>
+        <button onclick="window.location='/list'" class="btn btn-default">LIST USERS</button>
+        <button onclick="window.location='/add_user'" class="btn btn-default">ADD A USER</button>
+        <button onclick="window.location='/finduser'" class="btn btn-default">FIND A USER</button>
+        <button onclick="window.location='/contact'" class="btn btn-danger">CONTACT</button>
+      </div>
+    </div>
+  </body>
+</html>

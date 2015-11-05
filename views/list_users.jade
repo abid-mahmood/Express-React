@@ -1,0 +1,27 @@
+extends layout
+block content
+  div.container
+    h1.
+      Users List
+    p.
+      Below are the users currently present in the database!
+    table.table.table-bordered
+      th.warning()= "Names"
+      th.warning()= "Usernames"
+      th.warning()= "Addresses"
+      th.warning()= "Contact"
+      th.warning()= "Actions"
+      each user, i in userlist
+        tr
+          td.success()=user.name
+          td.success
+            a(href="/")=user.username
+          td.success()=user.address
+          td.success()= user.phone
+          td.active
+            button.btn.btn-danger(onclick="window.location='/'")="DESTROY"
+            button.btn.btn-warning(onclick="window.location='/'")="EDIT"
+            button.btn.btn-primary(onclick="window.location='/'")="SHOW"
+
+    
+    button.btn.btn-primary(onclick="window.location='/'")= "HOME"

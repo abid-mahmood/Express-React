@@ -1,0 +1,58 @@
+extends layout
+block content
+  div.container
+    h1.
+      Add a new User
+    hr.
+    if errors
+      each error in errors
+        div.alert.alert-danger
+          span #{error.error}
+    if saved
+      div.alert.alert-success
+        span User has been saved!
+
+    form.login-form.form-horizontal(method='post', role='form', action='createuser')
+      input(name='_csrf', type='hidden', value=csrfToken)
+
+      div.form-group
+        label.col-sm-4 Name
+        div.col-sm-8
+          input.form-control(
+            placeholder="Your name is reuired",
+            required=true,
+            name='name'
+            type='text',
+            value=name
+          )
+      div.form-group
+        label.col-sm-4 Username
+        div.col-sm-8
+          input.form-control(
+            placeholder="Enter Username",
+            required=true,
+            name='username',
+            value=username
+          )
+      div.form-group
+        label.col-sm-4 Address
+        div.col-sm-8
+          input.form-control(
+            placeholder="Optional",
+            name='address',
+            value=address
+          )
+      div.form-group
+        label.col-sm-4 Phone Number
+        div.col-sm-8
+          input.form-control(
+            placeholder="Optional Phone Number",
+            name='phone',
+            value=phone
+          )
+      div.form-group
+        div.col-sm-offset-4.col-sm-8
+          button.login.btn.btn-default(type="submit")= "Save"
+      div.pull-right
+        button.btn.btn-primary(onclick="window.location='/'")= "HOME"
+

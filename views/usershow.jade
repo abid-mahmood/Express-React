@@ -1,0 +1,22 @@
+extends layout
+block content
+  div.container
+    h1.
+      The data is as below:
+    hr.
+    div.panel.panel-success
+      div.panel-heading
+        h2.panel-title.
+          #{data.name}
+      div.panel-body
+        table.table.table-bordered
+          th.danger Username
+          th.danger Address
+          th.danger Phone
+          tr
+            td.warning #{data.username}
+            td.warning #{data.address}
+            td.warning #{data.phone}
+
+    div.pull-right
+        button.btn.btn-primary(onclick="window.location='/'")= "HOME"
